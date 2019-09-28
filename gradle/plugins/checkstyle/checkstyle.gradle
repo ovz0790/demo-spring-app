@@ -1,0 +1,14 @@
+apply plugin: 'checkstyle'
+
+String checkstyleLocation = "gradle/plugins/checkstyle"
+
+tasks.withType(Checkstyle) {
+    configProperties = ['checkstyleDirectory': "$checkstyleLocation"]
+}
+
+checkstyle {
+    toolVersion = '7.6.1'
+    checkstyleMain.config = resources.text.fromFile("$checkstyleLocation/checkstyle.xml")
+    checkstyleTest.config = resources.text.fromFile("$checkstyleLocation/checkstyle-test.xml")
+    ignoreFailures = false
+}

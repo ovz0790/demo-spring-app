@@ -1,0 +1,15 @@
+server:
+  port: ${PORT_TO_EXPOSE:9096}
+spring:
+  application:
+    name: image-features
+
+logging:
+  level:
+    ROOT: DEBUG
+    net.demo: DEBUG
+
+management:
+  endpoints:
+    web:
+      base-path: /
