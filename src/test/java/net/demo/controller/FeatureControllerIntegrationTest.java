@@ -1,7 +1,6 @@
 package net.demo.controller;
 
 import net.demo.WebIntegration;
-import net.demo.charging.station.CommonOperations;
 import net.demo.dto.FeatureDto;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,8 +22,8 @@ import static org.springframework.http.HttpStatus.OK;
 
 @RunWith(SpringRunner.class)
 @WebIntegration
-public class FeatureControllerIntegrationTest extends CommonOperations {
-    private static final String ID = "39c2f29e-c0f8-4a39-a98b-deed547d6aea";
+public class FeatureControllerIntegrationTest {
+    private static final String ID = "cf5dbe37-ab95-4af1-97ad-2637aec4ddf0";
     private static final String NOT_FOUND_ID = "11111111111111111111111";
     private static final String FEATURE_URL = "/api/features";
     private static final String FEATURE_BY_ID_URL = "/api/features/%s";
@@ -38,7 +37,7 @@ public class FeatureControllerIntegrationTest extends CommonOperations {
         ParameterizedTypeReference<List<FeatureDto>> responseType =
                 new ParameterizedTypeReference<List<FeatureDto>>() { };
         List<FeatureDto> features = restTemplate.exchange(FEATURE_URL, GET, EMPTY, responseType).getBody();
-        assertEquals(2, features.size());
+        assertEquals(14, features.size());
     }
 
     @Test

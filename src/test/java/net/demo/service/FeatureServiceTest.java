@@ -17,7 +17,7 @@ import static org.junit.Assert.assertTrue;
 @Integration
 @RunWith(SpringRunner.class)
 public class FeatureServiceTest {
-    private static final String ID = "39c2f29e-c0f8-4a39-a98b-deed547d6aea";
+    private static final String ID = "cf5dbe37-ab95-4af1-97ad-2637aec4ddf0";
     private static final String NOT_FOUND_ID = "11111111111111111111111";
 
     @Autowired
@@ -27,7 +27,7 @@ public class FeatureServiceTest {
     @Test
     public void shouldGetListOfAllFeatures() {
         List<FeatureDto> features = featureService.getFeatures();
-        assertEquals(2, features.size());
+        assertEquals(14, features.size());
     }
 
     @Test
