@@ -33,7 +33,8 @@ public class FeatureController {
     @GetMapping("/{id}")
     @ApiOperation("Get features by id")
     public FeatureDto getFeaturesById(@PathVariable String id) {
-        return featureService.getFeatureById(id);
+        return featureService.getFeatureById(id).orElseThrow(() ->
+                new FeatureNotFoundException("Feature with id" + id + "not found"));
     }
 
     @SneakyThrows

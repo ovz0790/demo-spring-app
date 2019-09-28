@@ -10,7 +10,7 @@ import java.util.Optional;
  */
 public interface FeatureService {
 
-    FeatureDto getFeatureById(String id);
+    Optional<FeatureDto> getFeatureById(String id);
 
     List<FeatureDto> getFeatures();
 
